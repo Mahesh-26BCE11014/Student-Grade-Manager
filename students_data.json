@@ -1,0 +1,42 @@
+[
+    {
+        "roll_no": "26BAI11036",
+        "name": "Kuldeep palo",
+        "marks": [
+            38,
+            33,
+            41,
+            37
+        ]
+    },
+    {
+        "roll_no": "26BCE11014",
+        "name": "Mahesh",
+        "marks": [
+            43,
+            44,
+            37,
+            42
+        ]
+    },
+    {
+        "roll_no": "26BCE10306",
+        "name": "Aditya Halkara",
+        "marks": [
+            20,
+            23,
+            24,
+            32
+        ]
+    },
+    {
+        "roll_no": "26BME10017",
+        "name": "Harshwardhan chaturvedi",
+        "marks": [
+            23,
+            24,
+            43,
+            30
+        ]
+    }
+]
