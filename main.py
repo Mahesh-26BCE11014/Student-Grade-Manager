@@ -1,27 +1,16 @@
-"""
-main.py
-
-Student Grade Management System
---------------------------------
-A simple console program to add students, record their marks,
-and view grades/statistics for the whole class.
-
-Run with: python main.py
-"""
 
 from student import Student
 import file_handler
 
-# load existing data (if any) when the program starts
+
 students = file_handler.load_students()
 
 
 def find_student(roll_no):
-    """Loops through the students list and returns the matching one,
-    or None if not found. Basic control flow + functions."""
-    for s in students:
-        if s.roll_no == roll_no:
-            return s
+   
+    for student in students:
+        if student.roll_no == roll_no:
+            return student
     return None
 
 
@@ -38,15 +27,14 @@ def add_student():
     print("Enter marks for 4 subjects:")
     for i in range(1, 5):
         while True:
-            try:
-                mark = int(input(f"  Subject {i}: "))
-                if mark < 0 or mark > 50:
-                    print("  Marks should be between 0 and 50.")
-                    continue
-                marks.append(mark)
-                break
-            except ValueError:
-                print("  Please enter a valid whole number.")
+            
+            mark = int(input("  Subject ", i, ": "))
+            if mark < 0 or mark > 50:
+                print("  Marks should be between 0 and 50.")
+                continue
+            marks.append(mark)
+            break
+           
 
     new_student = Student(roll_no, name, marks)
     students.append(new_student)
@@ -58,25 +46,25 @@ def view_all_students():
         print("No student records found.\n")
         return
 
-    for s in students:
-        s.display()
+    for student in students:
+        student.display()
 
 
 def view_one_student():
     roll_no = input("Enter roll number to search: ")
-    s = find_student(roll_no)
+    student = find_student(roll_no)
 
-    if s is None:
+    if student is None:
         print("No student found with that roll number.\n")
     else:
-        s.display()
+        student.display()
 
 
 def update_marks():
     roll_no = input("Enter roll number to update: ")
-    s = find_student(roll_no)
+    student = find_student(roll_no)
 
-    if s is None:
+    if student is None:
         print("No student found with that roll number.\n")
         return
 
@@ -92,25 +80,23 @@ def update_marks():
                 print("  Please enter a valid whole number.")
 
     from array import array
-    s.marks = array('i', new_marks)
+    student.marks = array('i', new_marks)
     print("Marks updated successfully!\n")
 
 
 def delete_student():
     roll_no = input("Enter roll number to delete: ")
-    s = find_student(roll_no)
+    student = find_student(roll_no)
 
-    if s is None:
+    if student is None:
         print("No student found with that roll number.\n")
         return
 
-    students.remove(s)
+    students.remove(student)
     print("Student record deleted.\n")
 
 
 def class_statistics():
-    """Calculates the class average and finds the topper.
-    Shows use of loops + basic data structures (list, dict)."""
     if len(students) == 0:
         print("No student records to calculate statistics.\n")
         return
@@ -119,11 +105,11 @@ def class_statistics():
     topper = students[0]
     grade_count = {"A+": 0, "A": 0, "B": 0, "C": 0, "Fail": 0}
 
-    for s in students:
-        total_of_all += s.average_marks()
-        if s.average_marks() > topper.average_marks():
-            topper = s
-        grade_count[s.get_grade()] += 1
+    for student in students:
+        total_of_all += student.average_marks()
+        if student.average_marks() > topper.average_marks():
+            topper = student
+        grade_count[student.get_grade()] += 1
 
     class_average = total_of_all / len(students)
 
