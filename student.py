@@ -1,11 +1,3 @@
-"""
-student.py
-
-Holds the Student class. Each student has a roll number, a name,
-and their marks in 5 subjects. Marks are stored using the array
-module (not a plain list) since all marks are whole numbers -
-this is the "array data structure" we learned in Module 11.
-"""
 
 from array import array
 
@@ -14,13 +6,13 @@ class Student:
     def __init__(self, roll_no, name, marks):
         self.roll_no = roll_no
         self.name = name
-        # 'i' means the array will only hold signed integers
+       
         self.marks = array('i', marks)
 
     def total_marks(self):
         total = 0
-        for m in self.marks:
-            total = total + m
+        for mark in self.marks:
+            total = total + mark
         return total
 
     def average_marks(self):
@@ -28,7 +20,7 @@ class Student:
 
     def get_grade(self):
         avg = self.average_marks()
-        # simple grade boundaries using if / elif / else
+        
         if avg >= 40:
             return "A+"
         elif avg >= 30:
@@ -41,7 +33,7 @@ class Student:
             return "Fail"
 
     def to_dict(self):
-        # used when saving to the JSON file
+       
         return {
             "roll_no": self.roll_no,
             "name": self.name,
