@@ -28,5 +28,3 @@ calculate grades.
 2. Open Terminal and run "python main.py"
 3. Follow instructions on the screen.
 
-No extra libraries need to be installed — everything used here is part
-of standard Python.
