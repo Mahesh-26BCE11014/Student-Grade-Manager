@@ -1,11 +1,12 @@
 # Student Grade Management System
 
-A simple console-based Python program to manage student records and
-calculate grades. Made as a project for the Python Essentials course.
+A simple Python program to manage student records and
+calculate grades.
 
 ## What it does
 - Add a new student with roll number, name, and marks in 5 subjects
-- View all students or search for one by roll number
+- View all students
+- Search for one by roll number
 - Update a student's marks
 - Delete a student record
 - View class statistics (class average, topper, grade distribution)
@@ -16,31 +17,16 @@ calculate grades. Made as a project for the Python Essentials course.
 - Variables, loops, and if/elif/else conditions
 - Functions
 - Lists and dictionaries
-- The `array` module (marks are stored as an array, not a plain list)
-- Object-Oriented Programming (the `Student` class in `student.py`)
+- "array" module 
+- Object-Oriented Programming 
 - Splitting code into multiple files/modules and importing them
-- File handling with JSON (`file_handler.py`)
-- Basic exception handling (try/except) for invalid mark input
-
-## Files
-```
-student-grade-manager/
-├── main.py            # menu + program flow
-├── student.py          # Student class
-├── file_handler.py       # save/load functions
-└── students_data.json      # created automatically when you save
-```
+- File handling with JSON 
+- Basic exception handling 
 
 ## How to run
-1. Make sure Python 3 is installed:
-   ```
-   python3 --version
-   ```
-2. Run the program:
-   ```
-   python3 main.py
-   ```
-3. Follow the on-screen menu (enter a number from 1 to 7).
+1. Python should be installed on Laptop
+2. Open Terminal and run "python main.py"
+3. Follow instructions on the screen.
 
 No extra libraries need to be installed — everything used here is part
 of standard Python.
